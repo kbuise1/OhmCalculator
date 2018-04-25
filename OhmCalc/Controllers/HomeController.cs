@@ -11,7 +11,11 @@ namespace OhmCalc.Controllers
 {
     public class HomeController : Controller
     {
-
+        /// <summary>
+        /// Loads index page and fills drop down list
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>index view with model list values</returns>
         public ActionResult Index(CalculationModel model)
         {
             FillList(model);
@@ -19,7 +23,11 @@ namespace OhmCalc.Controllers
             return View("Index",model);
         }
         
-        
+        /// <summary>
+        /// Calls calculate method and returns results in partial view _calculations
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>partial view _calculations</returns>
         public ActionResult Calculate(CalculationModel model)
         {
 
@@ -28,8 +36,10 @@ namespace OhmCalc.Controllers
             return PartialView("_Calculations", model);
         }
         
-
-
+        /// <summary>
+        /// Fills model list with corresponding color/value pairs
+        /// </summary>
+        /// <param name="model"></param>
         public void FillList(CalculationModel model)
         {
             var significantFigureColors = new Dictionary<float, string>()
@@ -86,7 +96,10 @@ namespace OhmCalc.Controllers
         }
 
 
-
+        /// <summary>
+        /// Calculates ohm value and if tolerance value given defines the min and max range of ohm value
+        /// </summary>
+        /// <param name="model"></param>
         public void CalculateOhmValue(CalculationModel model)
         {
 
