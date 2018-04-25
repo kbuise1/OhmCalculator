@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OhmCalc;
 using OhmCalc.Controllers;
-using OhmCalc.ViewModels;
+using OhmCalc.Models;
 
 namespace OhmCalc.Tests.Controllers
 {

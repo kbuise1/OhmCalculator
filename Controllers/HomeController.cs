@@ -1,5 +1,5 @@
 ﻿using OhmCalc.Interfaces;
-using OhmCalc.Models;
+using OhmCalc.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +34,7 @@ namespace OhmCalc.Controllers
         {
             var significantFigureColors = new Dictionary<float, string>()
             {
+                
                 {0,"black" },
                 {1,"brown" },
                 {2,"red" },
@@ -66,6 +67,7 @@ namespace OhmCalc.Controllers
 
             var toleranceColors = new Dictionary<float, string>()
             {
+                    
                     {0.1f,"silver"},
                     {0.05f,"gold"},
                     {0.01f,"brown"},

@@ -1,0 +1,26 @@
+﻿@model OhmCalc.ViewModels.CalcInputModel
+@{
+    @Scripts.Render("~/Scripts/jquery-1.10.2.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+}
+
+
+
+
+<div class="form-group">
+
+    @Html.LabelFor(m => m.OhmValue)
+    @Html.TextBoxFor(m => m.OhmValue)
+
+    @Html.LabelFor(m => m.Tolerance)
+    @Html.TextBoxFor(m => m.Tolerance)
+
+    @Html.LabelFor(m => m.MinOhm)
+    @Html.TextBoxFor(m => m.MinOhm)
+
+    @Html.LabelFor(m => m.MaxOhm)
+    @Html.TextBoxFor(m => m.MaxOhm)
+</div>
+
+@*<script src="~/Scripts/jqueryval"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>*@
