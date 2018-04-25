@@ -1,0 +1,48 @@
+﻿@model OhmCalc.ViewModels.CalculationModel
+@{
+    @Scripts.Render("/Scripts/jquery-1.10.2.js")
+    @Scripts.Render("/Scripts/jquery.unobtrusive-ajax.min.js")
+}
+
+
+<h2>Ohm Calc</h2>
+@using (Ajax.BeginForm("Calculate", "Home", new AjaxOptions
+{
+    UpdateTargetId = "calcDiv",
+    InsertionMode = InsertionMode.Replace
+
+}))
+
+{
+
+<div class="form-group form-inline">
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.BandAValue)
+        @Html.DropDownListFor(m => m.BandAValue, new SelectList(Model.BandAColorList.Items, "Key", "Value"), " ", new { @class = "form-control" })
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.BandBValue)
+        @Html.DropDownListFor(m => m.BandBValue, new SelectList(Model.BandBColorList.Items, "Key", "Value"), " ", new { @class = "form-control" })
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.BandCValue)
+        @Html.DropDownListFor(m => m.BandCValue, new SelectList(Model.BandCColorList.Items, "Key", "Value"), " ", new { @class = "form-control" })
+    </div>
+    <div class="col-md-3">
+        @Html.LabelFor(m => m.BandDValue)
+        @Html.DropDownListFor(m => m.BandDValue, new SelectList(Model.BandDColorList.Items, "Key", "Value"), " ", new { @class = "form-control" })
+    </div>
+
+    <div>
+        <button type="submit" id="submit">Calculate</button>
+    </div>
+
+</div>
+
+    <div id="calcDiv">
+    </div>
+
+}
+
+
+
