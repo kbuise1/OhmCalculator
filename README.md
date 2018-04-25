@@ -19,37 +19,39 @@ I decided not to implement the interface because it appeared more efficient to m
 I did implement a version using the interface in the beginning.  I changed the interface method signature to return an array to store the multiple calculation values.  I then used switch case methods to return the corresponding values to do the calculations. Shown below:
 
 
-public class HomeController : Controller, IOhmValueCalculator
-    {
-
-    public float[] CalculateOhmValue(string bandAColor, string bandBColor, string bandCColor, string bandDColor){
-    float val = GetSigFigure(bandAColor) * 10 + GetSigFigure(bandBColor)) * GetMultiplier(bandCColor);
-
-            if (bandDColor != null)
+        public class HomeController : Controller, IOhmValueCalculator
             {
-                float tolerance = GetTolerance(bandDColor, val);
-                float[] output = { val - tolerance, val + tolerance };
-                return output;
-            }
-            else
-            {
-                float[] output = { val, };
-                return output;
-            }
-    };
 
-}
+                public float[] CalculateOhmValue(string bandAColor, string bandBColor, string bandCColor, string bandDColor){
+                float val = GetSigFigure(bandAColor) * 10 + GetSigFigure(bandBColor)) * GetMultiplier(bandCColor);
+
+                        if (bandDColor != null)
+                        {
+                            float tolerance = GetTolerance(bandDColor, val);
+                            float[] output = { val - tolerance, val + tolerance };
+                            return output;
+                        }
+                        else
+                        {
+                            float[] output = { val, };
+                            return output;
+                        }
+                };
+
+        };
             
             
-public float GetSigFigure
-switch (color.ToLower())
-        {
-        case "pink":
-                return 0.001f;
-            case "silver":
-                return 0.01f;
-           };
-           
-           
-           
+            public float GetSigFigure(){
+            switch (color.ToLower())
+                    {
+                    case "pink":
+                            return 0.001f;
+                        case "silver":
+                            return 0.01f;
+                       };
+                       
+               };
+
+
+
 
